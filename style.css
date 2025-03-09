@@ -1,0 +1,106 @@
+/* Stil pentru întregul corp al paginii */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #282c34;
+    color: white;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+
+/* Titlu principal */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Stil pentru toate butoanele */
+button {
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(255, 75, 43, 0.3);
+    width: 80%;
+    max-width: 300px;
+}
+
+button:hover {
+    background: linear-gradient(to right, #ff4b2b, #ff416c);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0px 2px 5px rgba(255, 75, 43, 0.5);
+}
+
+/* Stil pentru secțiunea de rezultate */
+#result {
+    margin-top: 20px;
+    text-align: left;
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Casetă Termeni și Condiții */
+#termsBox {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: black;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+#termsBox a {
+    color: #ff9800;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#termsBox button {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#termsBox button:hover {
+    background-color: #e68900;
+}
+#termsBox a {
+    color: #ff9800;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#termsBox a:hover {
+    text-decoration: underline;
+}

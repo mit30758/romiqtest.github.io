@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test IQ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="quiz">
+        <h1>Test IQ</h1>
+        <p id="question"></p>
+        <div id="options"></div>
+    </div>
+
+    <!-- Buton de descărcare scor, inițial ascuns -->
+    <button id="downloadBtn" onclick="downloadScore()" style="display:none;">Descarcă scorul</button>
+
+    <!-- Buton pentru vizualizarea diplomei -->
+    <button id="viewDiploma" style="display:none;">Vizualizează diploma</button>
+
+    <!-- Scripturile necesare -->
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("viewDiploma").addEventListener("click", function() {
+            // Aici ar trebui să fie scorul real obținut de utilizator
+            let score = localStorage.getItem("finalScore") || 0;
+            let locul;
+
+            // Determinăm locul în funcție de scor
+            if (score >= 3) locul = 1;
+            else if (score == 2) locul = 2;
+            else if (score == 1) locul = 3;
+            else locul = 4;
+
+            // Redirecționare către diploma corectă sau alertă
+            if (locul === 1) {
+                window.location.href = "Diploms/Accept/2025-accept RO v1confirm-2025 accepted final locl1.pdf";
+            } else if (locul === 2) {
+                window.location.href = "Diploms/Accept/2025-accept RO v1confirm-2025 accepted final locl2.pdf";
+            } else if (locul === 3) {
+                window.location.href = "Diploms/Accept/2025-accept RO v1confirm-2025 accepted final locle.pdf";
+            } else {
+                alert("Ai IQ prea mic!");
+            }
+        });
+
+        // Funcția care afișează butoanele la final
+        function showResults(finalScore) {
+            localStorage.setItem("finalScore", finalScore); // Salvăm scorul în localStorage
+            document.getElementById("downloadBtn").style.display = "block";
+            document.getElementById("viewDiploma").style.display = "block"; // Afișăm butonul de diplomă
+
+            // Dacă scorul e prea mic, butonul e dezactivat
+            if (finalScore < 1) {
+                document.getElementById("viewDiploma").disabled = true;
+                document.getElementById("viewDiploma").innerText = "Scor prea mic!";
+            }
+        }
+    </script>
+</body>
+</html>

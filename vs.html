@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concursuri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Concursuri:</h1>
+    <p id="concursuri-text">Se încarcă...</p>
+    <button onclick="location.href='index.html'">Înapoi</button>
+
+    <script>
+        fetch('concursuri.txt')
+            .then(response => response.text())
+            .then(text => {
+                document.getElementById('concursuri-text').innerText = text;
+            })
+            .catch(error => {
+                document.getElementById('concursuri-text').innerText = "Eroare la încărcarea concursurilor.";
+            });
+    </script>
+</body>
+</html>

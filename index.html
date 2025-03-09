@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romiqtest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Bine ai venit la Romiqtest</h1>
+    <button onclick="location.href='test1.html'">Începe testul</button>
+    <button onclick="location.href='vs.html'">Vizualizează scorul</button>
+    <button onclick="location.href='concursuri.html'">Vizualizează concursurile</button>
+
+    <!-- Termeni și Condiții -->
+    <div id="terms-box">
+        Acest website conține Termeni și Condiții. Accepți Termenii și Condițiile?
+        <a href="terms-conds.html">Află mai multe</a>
+        <button onclick="acceptTerms()">Da</button>
+        <button onclick="rejectTerms()">Nu</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (document.cookie.split("; ").find(row => row.startsWith("termsAccepted="))) {
+                document.getElementById("terms-box").style.display = "none";
+            }
+        });
+
+        function acceptTerms() {
+            document.cookie = "termsAccepted=true; path=/; max-age=" + (365 * 24 * 60 * 60);
+            document.getElementById("terms-box").style.display = "none";
+        }
+
+        function rejectTerms() {
+            alert("Nu poți folosi acest site fără a accepta termenii și condițiile.");
+        }
+    </script>
+</body>
+</html>
